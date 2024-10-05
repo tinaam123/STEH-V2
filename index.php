@@ -1,38 +1,3 @@
-<?php
-require "./dbBroker.php";
-require "model/user.php";
-
-session_start();
-
-if (isset($_SESSION['user_id'])) {
-    // include "obrada.php";
-    header('Location: home.php');
-    exit();
-} else {
-    if (
-        isset($_POST['submit'])
-        && isset($_POST['username']) && isset($_POST['password'])
-    ) {
-
-        $usernameF = $_POST['username'];
-        $passwordF = $_POST['password'];
-        $id = 1;
-
-        $user = new User($id, $usernameF, $passwordF);
-        // echo $passwordF + "  " + $usernameF;/\
-        $rs = User::logIn($user, $conn);
-
-        if ($rs->num_rows == 1) {
-            $_SESSION['user_id'] = $user->id;
-            header('Location: home.php');
-            exit();
-        } else {
-            
-        }
-    }
-}
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,7 +5,7 @@ if (isset($_SESSION['user_id'])) {
     <meta charset="UTF-8">
     <title>FON: Zakazivanje kolokvijuma</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css"> 
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body>

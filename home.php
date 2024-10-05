@@ -1,17 +1,3 @@
-<?php
-require "./dbBroker.php";
-require "./model/prijava.php";
-
-session_start();
-if (!isset($_SESSION['user_id'])) {
-    header('Location: index.php');
-    exit();
-}
-
-$result = Prijava::getAll($conn);
-
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +11,7 @@ $result = Prijava::getAll($conn);
 <body>
     <div class="container">
         <div class="row md-1">
-            <form action="obrada.php" method="post">
+            <form action="#" method="post">
                 <button type="submit" name="submit" value="log_out" class="btn btn-warning btn-block">Log out</button>
             </form>
         </div>
@@ -45,7 +31,7 @@ $result = Prijava::getAll($conn);
         <!-- Table section -->
         <div id="pregled" class="panel panel-success">
             <div class="panel-body">
-                <form id="prijavaForm" action="obrada.php" method="post">
+                <form id="prijavaForm" action="#" method="post">
                     <table id="myTable" class="table table-hover table-striped">
                         <thead>
                             <tr>
@@ -57,28 +43,24 @@ $result = Prijava::getAll($conn);
                             </tr>
                         </thead>
                         <tbody>
-                            <?php if ($result->num_rows > 0) { // Provera da li postoje podaci 
-                            ?>
-                                <?php while ($red = $result->fetch_array()) { ?>
-                                    <tr>
-                                        <td><?php echo $red["predmet"] ?></td>
-                                        <td><?php echo $red["katedra"] ?></td>
-                                        <td><?php echo $red["sala"] ?></td>
-                                        <td><?php echo $red["datum"] ?></td>
-                                        <td>
-                                            <label class="custom-radio-btn">
-                                                <input type="radio" name="id_predmeta" value="<?php echo $red['id']; ?>">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        </td>
-                                    </tr>
-                                <?php } ?>
-                            <?php } else {
-                            ?>
+                            <?php while ($red = $result->fetch_array()) { ?>
                                 <tr>
-                                    <td colspan="5" class="text-center">Nema unetih kolokvijuma</td>
+                                    <td><?php echo $red["predmet"] ?></td>
+                                    <td><?php echo $red["katedra"] ?></td>
+                                    <td><?php echo $red["sala"] ?></td>
+                                    <td><?php echo $red["datum"] ?></td>
+                                    <td>
+                                        <label class="custom-radio-btn">
+                                            <input type="radio" name="id_predmeta" value="<?php echo $red['id']; ?>">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </td>
                                 </tr>
                             <?php } ?>
+                            ?>
+                            <tr>
+                                <td colspan="5" class="text-center">Nema unetih kolokvijuma</td>
+                            </tr>
                         </tbody>
                     </table>
 
@@ -104,7 +86,7 @@ $result = Prijava::getAll($conn);
                         <h3 class="modal-title text-center">Zakazi kolokvijum</h3>
                     </div>
                     <div class="modal-body">
-                        <form action="obrada.php" method="post" id="dodajForm">
+                        <form action="#" method="post" id="dodajForm">
                             <div class="form-group">
                                 <label>Predmet</label>
                                 <input type="text" name="predmet" class="form-control" required>
@@ -137,7 +119,7 @@ $result = Prijava::getAll($conn);
                         <h3 class="modal-title text-center">Izmeni kolokvijum</h3>
                     </div>
                     <div class="modal-body">
-                        <form action="obrada.php" method="post" id="izmeniForm">
+                        <form action="#" method="post" id="izmeniForm">
                             <input id="id_predmeta" type="hidden" name="id_predmeta" readonly>
                             <div class="form-group">
                                 <label>Predmet</label>
@@ -170,24 +152,19 @@ $result = Prijava::getAll($conn);
     <script>
         // Omogućavanje dugmadi kada je selektovan radio button
         $('input[name="id_predmeta"]').on('change', function() {
-            // Omogućavamo dugmad "Izmeni" i "Obriši" nakon selektovanja
             $('#btn-izmeni').prop('disabled', false);
             $('#btn-obrisi').prop('disabled', false);
 
-            // Pronalazimo selektovani red u tabeli
             let selectedRow = $(this).closest('tr');
 
-            // Uzimamo podatke iz selektovanog reda
             let predmet = selectedRow.find('td:eq(0)').text();
             let katedra = selectedRow.find('td:eq(1)').text();
             let sala = selectedRow.find('td:eq(2)').text();
             let datum = selectedRow.find('td:eq(3)').text();
 
-            // Uzimamo vrednost iz selektovanog radio dugmeta (id predmeta)
             let id = $(this).val();
 
-            // Postavljamo vrednosti u modal (u ovom slučaju za polje id)
-            $('#id_predmeta').val(id); // Postavlja vrednost ID-a u hidden input ili modal
+            $('#id_predmeta').val(id);
             $('#predmet').val(predmet);
             $('#katedra').val(katedra);
             $('#sala').val(sala);
