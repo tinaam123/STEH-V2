@@ -1,0 +1,181 @@
+/* Globalni stil */
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('../img/19742.jpg'); /* Zameni putanju do slike */
+    background-size: cover; /* Slika pokriva celu stranicu */
+    background-repeat: no-repeat; /* Sprečava ponavljanje slike */
+    background-position: center center; /* Postavlja sliku u centar */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Osigurava da pozadina pokriva celu visinu stranice */
+}
+
+h1 {
+    text-align: center;
+    font-size: 48px; /* Veći, elegantniji font */
+    color: #2c3e50; /* Tamnija i elegantnija boja */
+    margin-bottom: 20px;
+    background: none;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Subtilna senka */
+}
+
+p {
+    text-align: center;
+    color: #7f8c8d; /* Neutralnija boja za tekst */
+    font-size: 18px;
+}
+
+/* Stil za jumbotron */
+.jumbotron {
+    background-color: #fff; /* Bela pozadina sa laganim senkama */
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Povećan efekat senke za elegantan izgled */
+    margin-bottom: 2rem;
+}
+
+/* Stil za tabele */
+table {
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: #fff; /* Bela pozadina */
+    border-collapse: collapse;
+    border-spacing: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Diskretna senka za tabelu */
+}
+
+thead th {
+    background-color: #3498db; /* Profesionalnija plava boja */
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+}
+
+tbody td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Lagano sivkasta boja za redove */
+}
+
+tbody tr:hover {
+    background-color: #e6e6e6; /* Subtilniji hover efekat */
+}
+
+.custom-radio-btn input[type="radio"] {
+    display: none;
+}
+
+.custom-radio-btn .checkmark {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #bdc3c7; /* Diskretna boja za radio dugme */
+    border-radius: 50%;
+}
+
+.custom-radio-btn input[type="radio"]:checked + .checkmark {
+    background-color: #3498db; /* Plava boja kada je selektovano */
+}
+
+/* Stil za dugmad */
+button {
+    cursor: pointer;
+    border-radius: 8px; /* Lagano zaobljenje umesto ekstremnih krivina */
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Blaga senka za dugmad */
+}
+
+button:hover {
+    transform: translateY(-2px); /* Suptilno podizanje prilikom hovera */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Veća senka na hover */
+}
+
+.btn-success {
+    background-color: #2ecc71; /* Svedenija zelena */
+    color: white;
+}
+
+.btn-success:hover {
+    background-color: #27ae60;
+}
+
+.btn-warning {
+    background-color: #f39c12; /* Profesionalnija narandžasta */
+    color: white;
+}
+
+.btn-warning:hover {
+    background-color: #e67e22;
+}
+
+.btn-danger {
+    background-color: #e74c3c; /* Svedenija crvena */
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #c0392b;
+}
+
+/* Stil za modale */
+.modal-content {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.modal-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #3498db; /* Plava boja naslova unutar modala */
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-control {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    width: 100%;
+    font-size: 16px;
+}
+
+.form-control:focus {
+    border-color: #3498db; /* Plava boja kod fokusa */
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+/* Footer za modal */
+.modal-footer {
+    text-align: center;
+    padding-top: 10px;
+    border-top: none;
+}
