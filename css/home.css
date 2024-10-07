@@ -5,37 +5,37 @@
 }
 
 body {
-    background-image: url('../img/19742.jpg'); /* Zameni putanju do slike */
-    background-size: cover; /* Slika pokriva celu stranicu */
-    background-repeat: no-repeat; /* Sprečava ponavljanje slike */
-    background-position: center center; /* Postavlja sliku u centar */
+    background-image: url('../img/19742.jpg');
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-position: center center; 
     color: #333;
     margin: 0;
     padding: 0;
-    height: 100vh; /* Osigurava da pozadina pokriva celu visinu stranice */
+    height: 100vh; 
 }
 
 h1 {
     text-align: center;
-    font-size: 48px; /* Veći, elegantniji font */
-    color: #2c3e50; /* Tamnija i elegantnija boja */
+    font-size: 48px; 
+    color: #2c3e50; 
     margin-bottom: 20px;
     background: none;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Subtilna senka */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); 
 }
 
 p {
     text-align: center;
-    color: #7f8c8d; /* Neutralnija boja za tekst */
+    color: #7f8c8d;
     font-size: 18px;
 }
 
 /* Stil za jumbotron */
 .jumbotron {
-    background-color: #fff; /* Bela pozadina sa laganim senkama */
+    background-color: #fff;
     padding: 2rem;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Povećan efekat senke za elegantan izgled */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
     margin-bottom: 2rem;
 }
 
@@ -43,14 +43,14 @@ p {
 table {
     width: 100%;
     margin-bottom: 1rem;
-    background-color: #fff; /* Bela pozadina */
+    background-color: #fff;
     border-collapse: collapse;
     border-spacing: 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Diskretna senka za tabelu */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
 }
 
 thead th {
-    background-color: #3498db; /* Profesionalnija plava boja */
+    background-color: #3498db; 
     color: white;
     padding: 15px;
     text-align: center;
@@ -64,12 +64,11 @@ tbody td {
 }
 
 tbody tr:nth-child(even) {
-    background-color: #f2f2f2; /* Lagano sivkasta boja za redove */
+    background-color: #f2f2f2; 
 }
 
 tbody tr:hover {
-    background-color: #e6e6e6; /* Subtilniji hover efekat */
-}
+    background-color: #e6e6e6; 
 
 .custom-radio-btn input[type="radio"] {
     display: none;
@@ -81,32 +80,31 @@ tbody tr:hover {
     display: inline-block;
     width: 20px;
     height: 20px;
-    background-color: #bdc3c7; /* Diskretna boja za radio dugme */
+    background-color: #bdc3c7; 
     border-radius: 50%;
 }
 
 .custom-radio-btn input[type="radio"]:checked + .checkmark {
-    background-color: #3498db; /* Plava boja kada je selektovano */
-}
+    background-color: #3498db; 
 
 /* Stil za dugmad */
 button {
     cursor: pointer;
-    border-radius: 8px; /* Lagano zaobljenje umesto ekstremnih krivina */
+    border-radius: 8px; 
     padding: 12px 25px;
     font-size: 16px;
     border: none;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Blaga senka za dugmad */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 button:hover {
-    transform: translateY(-2px); /* Suptilno podizanje prilikom hovera */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Veća senka na hover */
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
 }
 
 .btn-success {
-    background-color: #2ecc71; /* Svedenija zelena */
+    background-color: #2ecc71;
     color: white;
 }
 
@@ -115,7 +113,7 @@ button:hover {
 }
 
 .btn-warning {
-    background-color: #f39c12; /* Profesionalnija narandžasta */
+    background-color: #f39c12;
     color: white;
 }
 
@@ -124,7 +122,7 @@ button:hover {
 }
 
 .btn-danger {
-    background-color: #e74c3c; /* Svedenija crvena */
+    background-color: #e74c3c; 
     color: white;
 }
 
@@ -149,7 +147,7 @@ button:hover {
     font-size: 24px;
     margin-bottom: 10px;
     text-align: center;
-    color: #3498db; /* Plava boja naslova unutar modala */
+    color: #3498db; 
 }
 
 .modal-body {
@@ -169,7 +167,7 @@ button:hover {
 }
 
 .form-control:focus {
-    border-color: #3498db; /* Plava boja kod fokusa */
+    border-color: #3498db; 
     box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
 }
 
